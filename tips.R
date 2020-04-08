@@ -1,5 +1,8 @@
 #NA's to 0
-d[is.na(d)] <- 0
+df[is.na(df)] <- 0
+
+#Delete NA rows
+df <- df[complete.cases(df), ]
 
 #Pull function from other R script
 source("~/Desktop/R_scripts/universal_names_function.R")
