@@ -14,3 +14,6 @@ gsub("\\<AC093012.1\\>","IRAK4",external_gene_name)
 card_numbers <- c(c(2:10),"J","Q","K","A")
 suits <- c("Hearts","Tiles","Clovers","Pikes")
 deck <- expand.grid(card_numbers,suits)
+
+#not in function
+`%notin%` <- Negate(`%in%`)
