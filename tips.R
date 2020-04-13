@@ -17,3 +17,8 @@ deck <- expand.grid(card_numbers,suits)
 
 #not in function
 `%notin%` <- Negate(`%in%`)
+
+
+#read a text
+library(readtext)
+gene <- readtext("DROSHA_cDNA.txt")
