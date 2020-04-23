@@ -1,1 +1,11 @@
+https://www.youtube.com/watch?v=ALhy2ocS9L0&feature=youtu.be
+Favorites --> Preferences --> Tools ...
 
+Favorites --> Model Panel 
+
+#Delete chains
+delete :.e
+
+focus
+
+#2:42.B
