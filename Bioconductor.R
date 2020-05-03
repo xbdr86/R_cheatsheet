@@ -82,3 +82,9 @@ AAzika6F <- translate(rnaframesZikaSet) # translate all 6 reading frames
 vcountPattern(pattern = NS5, subject = AAzika6F, max.mismatch = 15) # Count the matches allowing 15 mistmatches
 selectedSet <- AAzika6F[3] # Select the frame that contains the match
 selectedSeq <- unlist(selectedSet) #Convert this frame into a single sequence
+matchPattern(ns5, selectedSeq, max.mismatch = 15)
+# load package IRanges
+
+library(IRanges)
+IRnum1 <- IRanges(start = c(1:5), end = 100) # start vector 1 through 5, end 100 
+IRnum2 <- IRanges(end = 100, width = c(89,10)) # end 100 and width 89 and 10
