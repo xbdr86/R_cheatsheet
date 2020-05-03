@@ -88,3 +88,31 @@ matchPattern(ns5, selectedSeq, max.mismatch = 15)
 library(IRanges)
 IRnum1 <- IRanges(start = c(1:5), end = 100) # start vector 1 through 5, end 100 
 IRnum2 <- IRanges(end = 100, width = c(89,10)) # end 100 and width 89 and 10
+
+library(GenomicRanges)
+myGR <- as(seq_intervals,"GRanges")
+seqnames(gr)
+ranges(gr)
+mcols(gr)
+genome(gr)
+seqinfo(gr)
+# Load human reference genome hg38
+library(TxDb.Hsapiens.UCSC.hg38.knownGene)
+
+# Assign hg38 to hg, then print it
+hg <- TxDb.Hsapiens.UCSC.hg38.knownGene
+hg
+# Extract all positive stranded genes in chromosome X, assign to hg_chrXgp, then sort it
+hg_chrXgp <- genes(hg, filter = list(tx_chrom = "chrX", tx_strand = "+"))
+sort(hg_chrXgp)
+
+rangefound <- subsetByOverlaps(hg_chrX, ABCD1) # Store the overlapping range in rangefound
+names(rangefound) # Check names of rangefound
+ABCD1 # Check the gene of interest 
+rangefound # Check rangefound
+
+library(TxDb.Hsapiens.UCSC.hg38.knownGene) # Load the human transcripts DB to hg
+hg <- TxDb.Hsapiens.UCSC.hg38.knownGene
+seqlevels(hg) <- c("chrX") # Prefilter chromosome X "chrX" using seqlevels()
+hg_chrXt <- transcriptsBy(hg, by = "gene") # Get all transcripts by gene and print it
+hg_chrXt$`215` # Select gene `215` from the transcripts
