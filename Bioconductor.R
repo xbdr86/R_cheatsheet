@@ -65,3 +65,20 @@ reverseComplement(zikv)
 
 # Translate the zikv sequence
 translate(zikv)
+
+# For Sets
+vmatchPattern(pattern = "ACATGGGCCTACCATGGGAG", 
+              subject = zikaVirus, max.mismatch = 1)
+# For single sequences
+matchPattern(pattern = "ACATGGGCCTACCATGGGAG", 
+              subject = zikv, max.mismatch = 1)
+
+
+findPalindromes(zikv) # Find palindromes in zikv
+
+
+rnaframesZikaSet # print the rnaframesZikaSet
+AAzika6F <- translate(rnaframesZikaSet) # translate all 6 reading frames 
+vcountPattern(pattern = NS5, subject = AAzika6F, max.mismatch = 15) # Count the matches allowing 15 mistmatches
+selectedSet <- AAzika6F[3] # Select the frame that contains the match
+selectedSeq <- unlist(selectedSet) #Convert this frame into a single sequence
