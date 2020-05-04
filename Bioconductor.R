@@ -1,5 +1,6 @@
 
 library(BiocInstaller) # Load the BiocInstaller packag
+library(BiocManager) 
 version # Check R version
 
 BiocInstaller::biocVersion() # Check Bioconductor version (For versions <= 3.7)
@@ -116,3 +117,78 @@ hg <- TxDb.Hsapiens.UCSC.hg38.knownGene
 seqlevels(hg) <- c("chrX") # Prefilter chromosome X "chrX" using seqlevels()
 hg_chrXt <- transcriptsBy(hg, by = "gene") # Get all transcripts by gene and print it
 hg_chrXt$`215` # Select gene `215` from the transcripts
+
+library(ShortRead)
+
+fqsample <- readFastq(dirPath = "data/", pattern = "fastq") # read fastq
+
+writeFastq(fqsample, file = "data/sample.fastq.gz")
+
+# Subsample of 500 bases
+sampler <- FastqSampler(con="data/SRR1971253.fastq", n=500)
+# save the yield of 500 read sequences
+sample_small <- yield(sampler)
+
+sread(fqsample)[1]
+quality(fqsample)[1] # Quality is represented with ASCII characters 
+pq <- PhredQuality(quality(fqsample)) ## PhredQuality instance
+qs <- as(pq, "IntegerList") # transform encoding into scores 
+
+qaSummary <- qa(fqsample, lane = 1)
+browseURL(report(qaSummary))
+
+# Check quality
+quality(fqsample)
+
+# Check encoding of quality
+encoding(quality(fqsample))
+
+# Check baseQuality
+qaSummary[["baseQuality"]]
+
+
+# Glimpse nucByCycle
+glimpse(nucByCycle)
+
+# Create a line plot of cycle vs count
+nucByCycle %>% 
+  # Gather the nucleotide letters in alphabet and get a new count column
+  gather(key = alphabet, value = count , -cycle) %>% 
+  ggplot(aes(x = cycle, y =  count, color = alphabet)) +
+  geom_line(size = 0.5 ) +
+  labs(y = "Frequency") +
+  theme_bw() +
+  theme(panel.grid.major.x = element_blank())
+
+# Sample with duplicates of class: ShortReadQ
+dfqsample
+
+# Get the reads from dfqsample
+mydReads <- sread(dfqsample)
+
+# Create myFil using polynFilter
+myFil <- polynFilter(threshold = 3, nuc = c("A"))
+
+# Apply your filter to fqsample
+filterCondition <- myFil(fqsample)
+
+# Use myFil with fqsample
+filteredSequences <- fqsample[filterCondition==TRUE]
+
+# Check reads of filteredSequences
+sread(filteredSequences)
+
+
+library(Rqc)
+files <- # get the full path of the files you want to assess
+qaRqc <- rqcQA(files)
+qaRqc <- rqcQA(files, workers = 4))
+# sample of sequences
+set.seed(1111)
+
+qaRqc_sample <- rqcQA(files, workers = 4, sample = TRUE, n = 500))
+# create a report
+reportFile <- rqcReport(qaRqc, templateFile = "myReport.Rmd")
+browseURL(reportFile)
+#The class of qaRqc is rqcResultSet
+methods(class = "RqcResultSet")
