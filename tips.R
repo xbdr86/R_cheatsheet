@@ -22,3 +22,6 @@ deck <- expand.grid(card_numbers,suits)
 #read a text
 library(readtext)
 gene <- readtext("DROSHA_cDNA.txt")
+
+#order
+newdata <- mtcars[order(mpg, -cyl),]
