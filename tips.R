@@ -25,3 +25,9 @@ gene <- readtext("DROSHA_cDNA.txt")
 
 #order
 newdata <- mtcars[order(mpg, -cyl),]
+
+#downsampling
+set.seed(123)
+index <- sample(x = 1:nrow(tsne), size = 10000)
+small <- tsne[index, ]
+plot(small$V2, small$V3)
