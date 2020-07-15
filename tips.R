@@ -1,3 +1,5 @@
+fileNames <- Sys.glob("*.csv")
+
 #NA's to 0
 df[is.na(df)] <- 0
 
