@@ -1,3 +1,7 @@
+require('stringdist')
+potential$dist5 <- stringdist(potential$part5, part5ref, method="dl")
+
+
 fileNames <- Sys.glob("*.csv")
 
 #NA's to 0
