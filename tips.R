@@ -3,7 +3,9 @@ calculate_mode <- function(x) {
   uniqx <- unique(na.omit(x))
   uniqx[which.max(tabulate(match(x, uniqx)))]
 }
+name_selected <- as.character(calculate_mode(as.factor(WT$miR_name)))
 
+#string distance calculation
 require('stringdist')
 potential$dist5 <- stringdist(potential$part5, part5ref, method="dl")
 
