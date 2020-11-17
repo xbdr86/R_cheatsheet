@@ -1,3 +1,9 @@
+#mode for factors
+calculate_mode <- function(x) {
+  uniqx <- unique(na.omit(x))
+  uniqx[which.max(tabulate(match(x, uniqx)))]
+}
+
 require('stringdist')
 potential$dist5 <- stringdist(potential$part5, part5ref, method="dl")
 
