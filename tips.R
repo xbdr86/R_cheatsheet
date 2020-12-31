@@ -1,3 +1,7 @@
+#Anchors start and end positions in string 
+^start
+$send
+
 #mode for factors
 calculate_mode <- function(x) {
   uniqx <- unique(na.omit(x))
