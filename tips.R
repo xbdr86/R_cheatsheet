@@ -49,3 +49,10 @@ set.seed(123)
 index <- sample(x = 1:nrow(tsne), size = 10000)
 small <- tsne[index, ]
 plot(small$V2, small$V3)
+
+#time keeping
+start.time <- Sys.time()
+end.time <- Sys.time()
+gene_names$time[a] <- difftime(end.time, start.time, units = "mins")
+
+# http://r-statistics.co/Strategies-To-Improve-And-Speedup-R-Code.html
