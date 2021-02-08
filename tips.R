@@ -56,3 +56,5 @@ end.time <- Sys.time()
 gene_names$time[a] <- difftime(end.time, start.time, units = "mins")
 
 # http://r-statistics.co/Strategies-To-Improve-And-Speedup-R-Code.html
+# https://www.data-to-viz.com/caveat/overplotting.html?s=03 overplotting
+# https://youtu.be/B880KgTpG0Q 
