@@ -2,6 +2,11 @@
 ^start
 $send
 
+#reverse complementary
+test <- "AAUGC"
+library(seqinr)
+toupper(c2s(rev(comp(s2c(gsub("U","T",test))))))
+
 #mode for factors
 calculate_mode <- function(x) {
   uniqx <- unique(na.omit(x))
