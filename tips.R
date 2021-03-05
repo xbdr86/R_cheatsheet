@@ -1,6 +1,15 @@
+#RNA logos in R
+# https://omarwagih.github.io/ggseqlogo/
+#install.packages("ggseqlogo")
+require(ggseqlogo)
+ggseqlogo(ap1_st$variant )
+ggplot() + geom_logo(ap1_st$variant) + theme_logo()
+
 #Anchors start and end positions in string 
 ^start
-$send
+send$
+apic1_5 <- "^\\Q((((((..(((.((((((((((((.((((((((.(.((.\\E"
+apic1_3 <- "\\Q.)).).)))))))).)).)))))))))).)))..))))))\\E$"
 
 #reverse complementary
 test <- "AAUGC"
