@@ -27,6 +27,10 @@ nchar(yeastGenome$chrM)
 getSeq(yeastGenome, names = "chrI", start = 100, end = 150)
 getSeq(yeastGenome, end=30) # Get the first 30 bases of each chromosome
 
+# convert strings to DNAStringSet
+library(Biostrings)
+seqs <- DNAStringSet(miRBase$PRI.SEQUENCE)
+
 # Check the alphabet of the zikaVirus
 alphabet(zikaVirus)
 
