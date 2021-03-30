@@ -1,17 +1,9 @@
-fetch 5B16
-color gray80
-color red, resi 75
-color red, resi 374
-color red, resi 438
-color red, resi 442
-
-color red, resi 1351
-color red, resi 1283
-
-
-##AGO scripts
+#structure of drosha
+fetch 5B16 
 fetch 4f3t # ago2
+
 # set display --> background --> white
+
 color gray70
 select bases, resn A+G+U+C
 # selection to orange
