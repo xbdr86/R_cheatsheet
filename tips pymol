@@ -1,0 +1,40 @@
+fetch 5B16
+color gray80
+color red, resi 75
+color red, resi 374
+color red, resi 438
+color red, resi 442
+
+color red, resi 1351
+color red, resi 1283
+
+
+##AGO scripts
+fetch 4f3t # ago2
+# set display --> background --> white
+color gray70
+select bases, resn A+G+U+C
+# selection to orange
+
+
+remove solvent
+select paz_dom, resi 226-347
+select miRNA, resn A+G+U+C
+select F294_residue, resi 294
+select L339_residue, resi 339
+select R315_residue, resi 315
+select E299_residue, resi 299
+
+select P295_residue, resi 295
+#view sequence of aminoacids
+set seq_view, 1
+
+#ago1
+select paz_dom, resi 227-346
+select F310_residue, resi 310
+select R278_residue, resi 278
+
+
+align 5B16, 2EZ6
+select drosha_hel1, resi 1260–1270
+split_chains
