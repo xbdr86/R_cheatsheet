@@ -4,14 +4,22 @@ fetch 5B16
 fetch 4f3t # ago2
 
 # set display --> background --> white
+bg_color white
+bg_rgb set to grey80
+
+remove solvent
+set cartoon_fancy_helices, 1
+set cartoon_side_chain_helper, on
 
 color gray70
 select bases, resn A+G+U+C
+color orange, resn A+G+U+C
 # selection to orange
 
+show sticks, resi 339
 
-remove solvent
 select paz_dom, resi 226-347
+smudge, resi 226-347
 select miRNA, resn A+G+U+C
 select F294_residue, resi 294
 select L339_residue, resi 339
