@@ -39,3 +39,9 @@ select R278_residue, resi 278
 align 5B16, 2EZ6
 select drosha_hel1, resi 1260–1270
 split_chains
+
+
+#MUTAGENESIS
+select F310_residue, resi 310
+Wizard > Mutagenesis > Protein > Select residue > Select Rotamet (apply)
+select residue > Action > Modify > Expand > by 5 A > Action > clean (that improve conditions arround the mutagenesis)
