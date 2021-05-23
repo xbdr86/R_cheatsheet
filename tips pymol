@@ -41,7 +41,11 @@ select drosha_hel1, resi 1260–1270
 split_chains
 
 
-#MUTAGENESIS
+#MUTAGENESIS (https://www.youtube.com/watch?v=M-VCBz83nfs)
 select F310_residue, resi 310
 Wizard > Mutagenesis > Protein > Select residue > Select Rotamet (apply)
 select residue > Action > Modify > Expand > by 5 A > Action > clean (that improve conditions arround the mutagenesis)
+
+#Hidrogen bonds
+selection Action > Find > Polar contacts > to other atoms in the object
+set h_bond_cutoff_center, 3.0 #strong hidrogen bonds 3 angstroms
