@@ -40,7 +40,7 @@ align 5B16, 2EZ6
 select drosha_hel1, resi 1260–1270
 split_chains
 
-show sticks, byres all within 5 of miRNA
+show sticks, byres all within 5 of miRNA #https://www.youtube.com/watch?v=mBlMI82JRfI
 
 #MUTAGENESIS (https://www.youtube.com/watch?v=M-VCBz83nfs)
 select F310_residue, resi 310
