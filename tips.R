@@ -1,3 +1,6 @@
+# R cheatsheets
+https://www.rstudio.com/resources/cheatsheets/?s=03
+
 #RNA logos in R
 # https://omarwagih.github.io/ggseqlogo/
 #install.packages("ggseqlogo")
