@@ -1,6 +1,10 @@
 # R cheatsheets
 https://www.rstudio.com/resources/cheatsheets/?s=03
 
+#Excel
+require(gdata)
+excel_file <- read.xls(file_name, sheet = "Sheet1", header = TRUE) 
+
 #RNA logos in R
 # https://omarwagih.github.io/ggseqlogo/
 #install.packages("ggseqlogo")
