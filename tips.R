@@ -5,6 +5,9 @@ https://www.rstudio.com/resources/cheatsheets/?s=03
 require(gdata)
 excel_file <- read.xls(file_name, sheet = "Sheet1", header = TRUE) 
 
+#Count instances
+read_dist <- as.data.frame(table(master_file$reads))
+
 #RNA logos in R
 # https://omarwagih.github.io/ggseqlogo/
 #install.packages("ggseqlogo")
