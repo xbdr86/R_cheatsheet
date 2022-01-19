@@ -67,6 +67,7 @@ gene <- readtext("DROSHA_cDNA.txt")
 
 #order
 newdata <- mtcars[order(mpg, -cyl),]
+mini <- mini[order(-mini$WT_GFP),]
 
 #downsampling
 set.seed(123)
