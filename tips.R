@@ -42,6 +42,7 @@ fileNames <- Sys.glob("*.csv")
 
 #NA's to 0
 df[is.na(df)] <- 0
+df$var1[is.na(df$var1)] <- 0
 
 #Delete NA rows
 df <- df[complete.cases(df), ]
