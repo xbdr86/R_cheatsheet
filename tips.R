@@ -76,6 +76,12 @@ index <- sample(x = 1:nrow(tsne), size = 10000)
 small <- tsne[index, ]
 plot(small$V2, small$V3)
 
+#compare two sequences nucleotide by nucleotide
+found_seq <- unlist(strsplit(found_seq, split = ""))
+ref_seq <- unlist(strsplit(ref_seq, split = ""))
+test_table <- data.frame(found_seq,ref_seq)
+test_table$equal <- test_table$found_seq==test_table$ref_seq
+
 #time keeping
 start.time <- Sys.time()
 end.time <- Sys.time()
