@@ -6,3 +6,37 @@ history
 
 # history of instances "cd" function was called
 history|grep cd
+
+# history of instances "cd" function was called into a text file
+history|grep cd > history.txt
+
+# view history file
+cat history.txt
+
+#make directory data
+mkdir data
+
+# move file history.txt to data folder
+mv history.txt ./data
+
+# check move directory
+ls ./data
+
+#
+ wget -h
+ wget -h > wget.txt
+ ls
+ cat wget.txt 
+ # count lines in wget.txt
+ wc -l wget.txt 
+ 
+ # Exercice
+ wget http://cf.10xgenomics.com/samples/cell-exp/3.0.0/pbmc_1k_v3/pbmc_1k_v3_fastqs.tar
+ tar xvf pbmc_1k_v3_fastqs.tar
+ cd pbmc_1k_v3_fastqs
+ ls
+ pbmc_1k_v3_fastqs/pbmc_1k_v3_S1_L001_R2_001.fastq.gz
+ fastq-dump --split-files SRR6334436 --> error to install
+ vdb-config --interactive
+ check box --> S for Save --> exit X
+ fastq-dump --split-files SRR6334436
