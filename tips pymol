@@ -16,6 +16,14 @@ select bases, resn A+G+U+C
 color orange, resn A+G+U+C
 # selection to orange
 
+## Make a new chain
+# Manually click and drag across the residues you wish to alter the chain name of.
+# In the PyMOL command line type:
+alter (sel),chain='Z'
+
+## Save as new pdb
+# File > Export Molecule > (settings export)
+
 show sticks, resi 339
 
 select paz_dom, resi 226-347
