@@ -3,7 +3,12 @@ https://www.rstudio.com/resources/cheatsheets/?s=03
 
 #Excel
 require(gdata)
-excel_file <- read.xls(file_name, sheet = "Sheet1", header = TRUE) 
+excel_file <- read.xls(file_name, sheet = "Sheet1", header = TRUE)
+
+#fread
+install.packages('data.table')
+require(data.table)
+total2 <- unique(fread(file = "data.tsv", header = T))
 
 #Count instances
 read_dist <- as.data.frame(table(master_file$reads))
