@@ -1,6 +1,9 @@
 # R cheatsheets
 https://www.rstudio.com/resources/cheatsheets/?s=03
 
+#Print cat output
+cat(paste("Line 1","Line 2",sep="\n"))
+
 #Excel
 require(gdata)
 excel_file <- read.xls(file_name, sheet = "Sheet1", header = TRUE)
