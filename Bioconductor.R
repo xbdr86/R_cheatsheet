@@ -1,4 +1,19 @@
+if (!require("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+BiocManager::install(version = "3.16")
+BiocManager::install("BiocInstaller")
 
+library(BiocManager) 
+BiocManager::install("BSgenome")
+library(BSgenome) #Load the BSgenome package
+packageVersion("BSgenome") #Check the version of the BSgenome package
+available.genomes()
+
+BiocManager::install("BSgenome.Hsapiens.UCSC.hg38")
+library(BSgenome.Hsapiens.UCSC.hg38)
+human_genome <- BSgenome.Hsapiens.UCSC.hg38
+
+###########
 library(BiocInstaller) # Load the BiocInstaller packag
 library(BiocManager) 
 version # Check R version
