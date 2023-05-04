@@ -38,6 +38,9 @@ select P295_residue, resi 295
 #view sequence of aminoacids
 set seq_view, 1
 
+# search for peptide sequences
+select pepseq VTLTHLF
+
 #ago1
 select paz_dom, resi 227-346
 select F310_residue, resi 310
