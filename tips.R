@@ -1,5 +1,7 @@
 # R cheatsheets
 https://www.rstudio.com/resources/cheatsheets/?s=03
+# Create, Move and delete files and folders
+https://www.r-bloggers.com/2018/07/r-how-to-create-delete-move-and-more-with-files/?s=03 
 
 #Print cat output
 cat(paste("Line 1","Line 2",sep="\n"))
