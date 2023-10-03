@@ -68,3 +68,59 @@ get_miRNA_structure <- function(duplex,ref_seq){
   miR_str <- paste0(miR_str,delta) 
   return(miR_str)
 }
+
+get_seed_structure <- function(miR_str){
+  seed <- substr(miR_str,2,8)
+  seed_LEN <- nchar(seed)-nchar(gsub("\\(","",gsub("\\)","",seed)))
+  return(seed_LEN)
+}
+
+view_miR_structure <- function(ref_seq,miR_str){
+  ref_seq <- as.character(ref_seq)
+  if(regexpr("_",ref_seq)>-1){
+    ref_seq <- substr(ref_seq,1,regexpr("_",ref_seq)-1)
+  }
+
+  Line1 <- paste0("miRNA ",ref_seq)
+  Line2 <- paste0("Hybr. ",miR_str)
+  cat(paste(Line1,Line2,sep="\n"))
+}
+
+#get_target_structure is non-vectorized
+get_target_structure <- function(duplex){
+  target_str <- substr(duplex,regexpr("&",duplex)+1,regexpr(" ",duplex)-1)
+  target_str <- strsplit(target_str, "")[[1]]
+  target_str <- rev(target_str)
+  target_str <- paste(target_str, collapse = "")
+  target_str <- gsub("\\)","\\(",target_str)
+  return(target_str)
+}
+
+view_footprint_structure <- function(footprint,target_str){
+  footprint <- as.character(footprint)
+  footprint <- strsplit(footprint, "")[[1]]
+  footprint <- rev(footprint)
+  footprint <- paste(footprint, collapse = "")
+  
+  Line2 <- paste0("Hybr. ",target_str)
+  Line1 <- paste0("foot 3",footprint,"5")
+  cat(paste(Line2,Line1,sep="\n"))
+}
+
+view_miRNA_footprint_structure <- function(ref_seq,miR_str,footprint,target_str){
+  ref_seq <- as.character(ref_seq)
+  if(regexpr("_",ref_seq)>-1){
+    ref_seq <- substr(ref_seq,1,regexpr("_",ref_seq)-1)
+  }
+  
+  footprint <- as.character(footprint)
+  footprint <- strsplit(footprint, "")[[1]]
+  footprint <- rev(footprint)
+  footprint <- paste(footprint, collapse = "")
+  
+  Line1 <- paste0("miRNA 5-",ref_seq,"-3")
+  Line2 <- paste0("Hybrid  ",miR_str)
+  Line3 <- paste0("Hybrid  ",target_str)
+  Line4 <- paste0("Targ. 3-",footprint,"-5")
+  cat(paste(Line1,Line2,Line3,Line4,sep="\n"))
+}
