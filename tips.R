@@ -4,6 +4,7 @@ https://www.rstudio.com/resources/cheatsheets/?s=03
 https://www.r-bloggers.com/2018/07/r-how-to-create-delete-move-and-more-with-files/?s=03 
 directories <- list.dirs(path = ".", full.names = TRUE, recursive = TRUE) #list of directories underneath
 file.exists("matrix_exactMatches_RPM_all.tsv") #check if file exists
+fileNames <- Sys.glob("*.csv")
 
 #Print cat output
 cat(paste("Line 1","Line 2",sep="\n"))
@@ -54,9 +55,6 @@ name_selected <- as.character(calculate_mode(as.factor(WT$miR_name)))
 #string distance calculation
 require('stringdist')
 potential$dist5 <- stringdist(potential$part5, part5ref, method="dl")
-
-
-fileNames <- Sys.glob("*.csv")
 
 #NA's to 0
 df[is.na(df)] <- 0
