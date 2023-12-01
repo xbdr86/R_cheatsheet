@@ -53,6 +53,11 @@ split_chains
 
 show sticks, byres all within 5 of miRNA #https://www.youtube.com/watch?v=mBlMI82JRfI
 
+#commands
+color blue, chain B and resi 1328
+as sticks, chain B and resi 1328
+remove (chain B and resi 1328)
+
 #MUTAGENESIS (https://www.youtube.com/watch?v=M-VCBz83nfs)
 select F310_residue, resi 310
 Wizard > Mutagenesis > Protein > Select residue > Select Rotamet (apply)
