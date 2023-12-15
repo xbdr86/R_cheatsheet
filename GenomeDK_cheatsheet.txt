@@ -1,0 +1,2 @@
+# Download from GenomeDK [more here: https://genome.au.dk/docs/working-with-data/]
+rsync -e ssh -avz user@login.genome.au.dk:/home/user/folder_in_GenomeDK /Users/au123456/Desktop/local_folder
