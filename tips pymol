@@ -67,8 +67,11 @@ select residue > Action > Modify > Expand > by 5 A > Action > clean (that improv
 selection Action > Find > Polar contacts > to other atoms in the object
 set h_bond_cutoff_center, 3.0 #strong hidrogen bonds 3 angstroms
 
+
 #visualize or hide multiple models from the same pdb file
 set all_states, on      
 set all_states, off
+split_states object 
+Actions > align > all to this
 
  NUCPLOT software
