@@ -10,6 +10,11 @@ fileNames <- Sys.glob("*.csv")
 cat(paste("Line 1","Line 2",sep="\n"))
 
 #Excel
+#install.packages("tidyverse")
+#install.packages("readxl")
+library(readxl)
+WT <- read_excel("journal.ppat.1010464.s009.xlsx", sheet = "WT")
+##older
 require(gdata)
 excel_file <- read.xls(file_name, sheet = "Sheet1", header = TRUE)
 
