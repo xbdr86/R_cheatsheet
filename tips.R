@@ -22,6 +22,7 @@ excel_file <- read.xls(file_name, sheet = "Sheet1", header = TRUE)
 install.packages('data.table')
 require(data.table)
 total2 <- unique(fread(file = "data.tsv", header = T))
+mydt10 <- fread("us-counties.csv", nrows = 10)
 
 #Count instances
 read_dist <- as.data.frame(table(master_file$reads))
